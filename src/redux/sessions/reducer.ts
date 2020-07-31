@@ -8,7 +8,7 @@ export default function sessionReducer(state = initialState, action: SessionActi
         case ADD_SESSION:
             return [...state, action.session];
         case REMOVE_SESSION:
-            return state.filter(v => v.id === action.session_id);
+            return state.filter(v => v.id !== action.session_id);
         default:
             return state;
     }

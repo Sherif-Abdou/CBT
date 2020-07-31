@@ -7,3 +7,5 @@ let store = createStore(combineReducers({
     sesssions: sessionsReducer,
     session_state: sessionStateReducer
 }));
+
+export default store;

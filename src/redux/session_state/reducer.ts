@@ -42,7 +42,7 @@ export default function sessionStateReducer(state=initialState, action: SessionS
                 }
             }
 
-            if (curr_temp !== null) {
+            if (curr_temp === null) {
                 return {
                     ...state,
                     temp_session: {...action.session_parts}
