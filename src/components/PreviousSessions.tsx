@@ -4,6 +4,7 @@ import {StoreInterface} from "../redux";
 import {addSession, fetchSessions} from "../redux/sessions/actions";
 import SessionItem from "./SessionItem";
 import send_store from "../redux/send_store";
+import {toggleSessionStage} from "../redux/session_state/actions";
 
 export default function PreviousSessions() {
     const sessions = useSelector((state: StoreInterface) => state.sessions);
@@ -16,14 +17,7 @@ export default function PreviousSessions() {
     }
 
     const new_session = () => {
-        dispatch(addSession({
-            date: new Date(),
-            id: Date.now().toString(),
-            post_feelings: "Gooder",
-            post_score: 20,
-            pre_feelings: "Good",
-            pre_score: 18
-        }));
+        dispatch(toggleSessionStage());
     }
     console.log(sessions)
 
