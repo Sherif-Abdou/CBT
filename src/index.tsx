@@ -16,4 +16,5 @@ ReactDOM.render(
     <Provider store={store}>
         <MainWindow/>
     </Provider>,
-    document.getElementById("root"));
+    document.getElementById("root")
+);
