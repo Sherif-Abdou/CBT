@@ -1,5 +1,5 @@
-import store from "../../../src/redux/index";
-import { toggleSessionStage, updateTempSession } from "../../../src/redux/session_state/actions"
+import store from "../../src/redux/index";
+import { toggleSessionStage, updateTempSession } from "../../src/redux/session_state/actions"
 
 
 test("Test store init", () => {

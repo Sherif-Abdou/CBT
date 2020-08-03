@@ -16,7 +16,7 @@ function next(mode: SessionMode): SessionMode {
     }
 }
 
-interface SessionState {
+export interface SessionState {
     session_mode: SessionMode 
     temp_session: Session | object
 }
