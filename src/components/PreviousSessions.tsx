@@ -25,9 +25,9 @@ export default function PreviousSessions() {
         <div>
             <h3>Previous Sessions</h3>
 
-            <button onClick={send_session_closure}>Send Sessions</button>
+            <button className="btn" onClick={send_session_closure}>Send Sessions</button>
 
-            <button onClick={new_session}>New Session</button>
+            <button className="btn" onClick={new_session}>New Session</button>
 
             <ul>
                 {sessions.map(session => <li key={session.id}><SessionItem session={session}/></li>)}

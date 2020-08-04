@@ -14,11 +14,6 @@ function MainWindow() {
     let current_element;
     switch (session_state.session_mode) {
         case "None":
-            (() => {
-                send_store("http://localhost:5000/", sessions, fetch)
-                    .then((res) => console.log(`${res.status}`))
-                    .catch((err) => console.error(err))
-            })();
             current_element = <PreviousSessions />
             break;
         case "Pre":
@@ -34,8 +29,9 @@ function MainWindow() {
     }
 
     return (
-        <div>
-            <h1>CBT</h1>
+        <div className="frame">
+            <h1 className="title top-bar">CBT</h1>
+            <br/>
 
             {current_element}
         </div>

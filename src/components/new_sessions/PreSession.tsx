@@ -20,18 +20,28 @@ export default function PreSession() {
         }
 
     return (
-        <form onSubmit={submit_func}>
+        <form onSubmit={submit_func} className="form-item">
             <label>
                 Type in your current feelings here
-                <textarea value={feelings} onChange={(e) => setFeelings(e.target.value)}/>
+                <br />
+                <br />
+                <textarea className="text" value={feelings} onChange={(e) => setFeelings(e.target.value)}/>
             </label>
+            <br/>
+            <br/>
             <label>
                 Please score your feelings from 1 to 100
+                <br />
+                <br/>
                 <input type="range" min="1" max="100" value={score}
+                       className="slider"
                        onChange={(e) => setScore(parseInt(e.target.value))} />
-            </label>
 
-            <input type="submit" value={"Next"} />
+            </label>
+            <p>{score}</p>
+
+            <br/>
+            <input className="btn btn-submit" type="submit" value={"Next"} />
         </form>
     )
 }
