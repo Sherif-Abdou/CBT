@@ -1,13 +1,13 @@
 import React from "react";
 import PreviousSessions from "./PreviousSessions";
 import send_store from "../redux/send_store";
-// @ts-ignore
-import styles from "../../public/new_style.module.sass";
 import {useDispatch, useSelector} from "react-redux";
 import {StoreInterface} from "../redux";
 import PreSession from "./new_sessions/PreSession";
 import {toggleSessionStage} from "../redux/session_state/actions";
 import PostSession from "./new_sessions/PostSession";
+
+
 
 function MainWindow() {
     const { sessions, session_state } = useSelector((store: StoreInterface) => store);
@@ -32,7 +32,7 @@ function MainWindow() {
 
     return (
         <div className="frame">
-            <h1 className="title top-bar">CBT</h1>
+            <h1 className="title top-bar green">CBT</h1>
             <br/>
 
             {current_element}

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {FormEvent, useEffect, useState} from "react";
 import {v4 as uuidv4} from "uuid";
 import {useDispatch, useSelector} from "react-redux";
 import store, {StoreInterface} from "../../redux";
@@ -14,41 +14,44 @@ export default function PostSession() {
     const dispatch = useDispatch();
     const temp = useSelector((state: StoreInterface) => state.session_state.temp_session);
 
-    useEffect(() => {
-        return (() => {
-                send_store("http://localhost:5000/", sessions, fetch)
-                    .then((res) => console.log(`${res.status}`))
-                    .catch((err) => console.error(err))
-            })
-    })
 
     const submit_func =
-        () => {
+        (e: FormEvent) => {
+            e.preventDefault()
             dispatch(updateTempSession({
                 post_feelings: feelings,
                 post_score: score,
             }));
-            dispatch(addSession(temp as Session));
+            dispatch(addSession({
+                ...temp,
+                post_feelings: feelings,
+                post_score: score,
+            } as Session));
 
             dispatch(toggleSessionStage());
         };
 
     return (
-        <form onSubmit={submit_func} className="title">
+        <form onSubmit={submit_func} className="form-item">
             <label>
                 Type in your current feelings here
-                <br />
+                <br/>
+                <br/>
                 <textarea className="text" value={feelings} onChange={(e) => setFeelings(e.target.value)}/>
             </label>
-            <br />
+            <br/>
+            <br/>
             <label>
                 Please score your feelings from 1 to 100
-                <br />
+                <br/>
+                <br/>
                 <input type="range" min="1" max="100" value={score}
-                       onChange={(e) => setScore(parseInt(e.target.value))} />
+                       className="slider"
+                       onChange={(e) => setScore(parseInt(e.target.value))}/>
             </label>
 
-            <input className="btn" type="submit" value={"Finish"} />
+            <br/>
+            <input className="btn btn-submit" type="submit" value={"Finish"}/>
         </form>
     )
 }

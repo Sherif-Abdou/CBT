@@ -14,7 +14,8 @@ function formatTime(time: number): string {
 
 export default function SessionItem(props: Props) {
     const {session} = props;
+    const stringDate = `${session.date.getMonth()}/${session.date.getDay()}/${session.date.getFullYear()} ${formatTime(session.date.getHours())}:${formatTime(session.date.getMinutes())}`;
     return (
-        <li>{session.date.getMonth()}/{session.date.getDay()}/{session.date.getFullYear()} {formatTime(session.date.getHours())}:{formatTime(session.date.getMinutes())}</li>
+        <li>{stringDate}: Delta: {session.post_score-session.pre_score}</li>
     )
 }

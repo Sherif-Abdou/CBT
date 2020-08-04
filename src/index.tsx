@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import MainWindow from "./components/MainWindow";
 import {Provider} from "react-redux";
 import store from "./redux";
 import {fetchSessions} from "./redux/sessions/actions";
+import "../public/new_styles.scss"
 
 
 console.log("Hello Land");
