@@ -73,3 +73,41 @@ html, body, .frame {
   vertical-align: center;
   horiz-align: center;
 }
+
+.row-container {
+  display: block;
+  flex-direction: row;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  float: left;
+  margin: {
+    right: 0;
+    left: 0;
+  }
+}
+
+b {
+  display: inline;
+}
+
+@mixin side {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 50%;
+  margin: {
+    right: 0;
+    left: 0;
+  };
+}
+
+.left-side {
+  @include side
+}
+
+.right-side {
+  @include side
+}

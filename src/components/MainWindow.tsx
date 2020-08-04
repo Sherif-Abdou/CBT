@@ -6,6 +6,7 @@ import {StoreInterface} from "../redux";
 import PreSession from "./new_sessions/PreSession";
 import {toggleSessionStage} from "../redux/session_state/actions";
 import PostSession from "./new_sessions/PostSession";
+import FixSession from "./new_sessions/FixSession";
 
 
 
@@ -22,8 +23,7 @@ function MainWindow() {
             current_element = <PreSession />
             break;
         case "Fix":
-            // current_element = <p>N/A</p>
-            dispatch(toggleSessionStage());
+            current_element = <FixSession />
             break;
         case "Post":
             current_element = <PostSession />
