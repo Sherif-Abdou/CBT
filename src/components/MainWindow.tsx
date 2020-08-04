@@ -1,6 +1,8 @@
 import React from "react";
 import PreviousSessions from "./PreviousSessions";
 import send_store from "../redux/send_store";
+// @ts-ignore
+import styles from "../../public/new_style.module.sass";
 import {useDispatch, useSelector} from "react-redux";
 import {StoreInterface} from "../redux";
 import PreSession from "./new_sessions/PreSession";
