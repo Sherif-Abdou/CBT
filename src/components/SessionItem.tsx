@@ -16,6 +16,6 @@ export default function SessionItem(props: Props) {
     const {session} = props;
     const stringDate = `${session.date.getMonth()}/${session.date.getDay()}/${session.date.getFullYear()} ${formatTime(session.date.getHours())}:${formatTime(session.date.getMinutes())}`;
     return (
-        <li>{stringDate}: Delta: {session.post_score-session.pre_score}</li>
+        <li>{stringDate}'s Score: {session.post_score}</li>
     )
 }

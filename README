@@ -1,0 +1,15 @@
+# CBT
+A self-therapy website to help students through these times. Made by Sherif, Nikhil, and Aayush
+
+## Install
+Make sure you have node and npm installed
+
+`
+npm install
+`
+
+## Running
+
+`
+./run
+`

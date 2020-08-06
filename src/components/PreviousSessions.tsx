@@ -33,7 +33,7 @@ export default function PreviousSessions() {
         <div>
             <h3>Previous Sessions</h3>
 
-            <button className="btn" onClick={send_empty_session_closure}>Flush Sessions</button>
+            {/*<button className="btn" onClick={send_empty_session_closure}>Flush Sessions</button>*/}
 
             <button className="btn" onClick={new_session}>New Session</button>
 
