@@ -2,6 +2,7 @@ const path = require("path");
 
 module.exports = {
     entry: './src/index.tsx',
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -9,10 +10,19 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
+            {
+                test: /\.s[ac]ss$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",
+                ],
+                exclude: /node_modules/,
+            },
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', ".sass", ".scss"],
     },
     output: {
         filename: 'bundle.js',
